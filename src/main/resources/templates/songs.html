@@ -7,7 +7,7 @@
 	<body>
 		<h1>java-study-nogizaka-web - songs</h1>
 		<ul>
-			<li th:each="song : ${songs}">[[${song.name}]]</li>
+			<li th:each="song : ${songs}">[[${song.id}]]: [[${song.name}]]</li>
 		</ul>
 	</body>
 </html>
