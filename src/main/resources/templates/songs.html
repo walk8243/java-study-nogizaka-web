@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<title>java-study-nogizaka-web</title>
+	</head>
+	<body>
+		<h1>java-study-nogizaka-web - songs</h1>
+		<ul>
+			<li th:each="song : ${songs}">[[${song.name}]]</li>
+		</ul>
+	</body>
+</html>

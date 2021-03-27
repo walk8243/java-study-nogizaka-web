@@ -9,9 +9,9 @@ public class IndexService extends BaseService {
 	@Autowired
 	RestTemplate restTemplate;
 
-	public static final String URL = "http://api:8080/";
+	public static final String BASE_PATH = "/";
 
 	public String getResponse() {
-		return restTemplate.getForObject(URL, String.class);
+		return restTemplate.getForObject(BASE_URL + BASE_PATH, String.class);
 	}
 }
