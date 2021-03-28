@@ -20,4 +20,9 @@ public class SongService extends BaseService {
 		Song[] songs = restTemplate.getForObject(BASE_URL + BASE_PATH + "/all", Song[].class);
 		return Arrays.asList(songs);
 	}
+
+	public Song get(Integer id) {
+		Song song = restTemplate.getForObject(BASE_URL + BASE_PATH + "/" + id.toString(), Song.class);
+		return song;
+	}
 }
