@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8" />
+		<title>java-study-nogizaka-web</title>
+	</head>
+	<body>
+		<h1>java-study-nogizaka-web - discs</h1>
+		<ul>
+			<li th:each="disc : ${discs}">
+				<a href="#" th:href="@{/disc/{id}(id=${disc.id})}">[[${disc.name}]]</a>
+			</li>
+		</ul>
+	</body>
+</html>
