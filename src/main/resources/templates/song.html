@@ -5,9 +5,9 @@
 		<title>java-study-nogizaka-web</title>
 	</head>
 	<body>
-		<h1>java-study-nogizaka-web - song</h1>
-		<div>
-			<h2>[[${song.name}]]</h2>
-		</div>
+		<h1>[[${song.name}]]</h1>
+		<ul>
+			<li th:each="disc : ${song.discographies}">[[${disc.id}]] : [[${disc.name}]] : [[${disc.type}]]</li>
+		</ul>
 	</body>
 </html>

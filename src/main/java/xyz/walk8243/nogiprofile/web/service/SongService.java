@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import xyz.walk8243.nogiprofile.web.model.Song;
+import xyz.walk8243.nogiprofile.web.model.SongDetail;
 
 @Service
 public class SongService extends BaseService {
@@ -21,8 +22,8 @@ public class SongService extends BaseService {
 		return Arrays.asList(songs);
 	}
 
-	public Song get(Integer id) {
-		Song song = restTemplate.getForObject(BASE_URL + BASE_PATH + "/" + id.toString(), Song.class);
+	public SongDetail get(Integer id) {
+		SongDetail song = restTemplate.getForObject(BASE_URL + BASE_PATH + "/discs/" + id.toString(), SongDetail.class);
 		return song;
 	}
 }
