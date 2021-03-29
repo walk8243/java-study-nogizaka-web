@@ -1,0 +1,4 @@
+app:
+  name: java-study-nogizaka-web
+  backend:
+    url: http://localhost:46468

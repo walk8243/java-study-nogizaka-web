@@ -1,0 +1,3 @@
+app:
+  backend:
+    url: http://api:8080

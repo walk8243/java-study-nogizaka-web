@@ -10,15 +10,15 @@ import xyz.walk8243.nogiprofile.web.model.SongDetail;
 
 @Service
 public class SongService extends BaseService {
-	public static final String BASE_PATH = "/song";
+	public final String BASE_PATH = "/song";
 
 	public List<Song> getAll() {
-		Song[] songs = restTemplate.getForObject(BASE_URL + BASE_PATH + "/all", Song[].class);
+		Song[] songs = restTemplate.getForObject(getBaseUrl() + BASE_PATH + "/all", Song[].class);
 		return Arrays.asList(songs);
 	}
 
 	public SongDetail get(Integer id) {
-		SongDetail song = restTemplate.getForObject(BASE_URL + BASE_PATH + "/discs/" + id.toString(), SongDetail.class);
+		SongDetail song = restTemplate.getForObject(getBaseUrl() + BASE_PATH + "/discs/" + id.toString(), SongDetail.class);
 		return song;
 	}
 }

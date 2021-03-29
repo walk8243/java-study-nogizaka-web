@@ -15,5 +15,6 @@ FROM openjdk:11
 
 WORKDIR /app
 COPY --from=worker /app/nogi-profile-web.jar .
+COPY docker/ .
 
 CMD [ "java", "-jar", "nogi-profile-web.jar" ]
