@@ -7,7 +7,12 @@
 	<body>
 		<h1>[[${song.name}]]</h1>
 		<ul>
-			<li th:each="disc : ${song.discographies}">[[${disc.id}]] : [[${disc.name}]] : [[${disc.type}]]</li>
+			<li th:each="disc : ${song.discographies}">
+				<a href="#" th:href="@{/disc/{id}(id=${disc.id})}">[[${disc.name}]] : [[${disc.type}]]</a>
+			</li>
 		</ul>
+		<p>
+			<a href="/song">曲一覧に戻る</a>
+		</p>
 	</body>
 </html>
