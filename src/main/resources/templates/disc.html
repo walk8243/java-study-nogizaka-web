@@ -9,7 +9,7 @@
 		<p>[[${disc.type}]]</p>
 		<ul>
 			<li th:each="song : ${disc.songs}">
-				<a href="#" th:href="@{/song/{id}(id=${song.id})}">[[${song.name}]]</a>
+				<a href="#" th:href="@{/song/{id}(id=${song.id})}">[[${song.order}]] : [[${song.name}]]</a>
 			</li>
 		</ul>
 		<p>
