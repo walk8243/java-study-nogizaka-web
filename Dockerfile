@@ -1,15 +1,17 @@
 FROM openjdk:11 AS worker
 
 WORKDIR /usr/local/src
-RUN apt update && apt install maven -y &&\
-	mvn -version
+RUN apt update && apt install zip unzip -y &&\
+	/bin/bash -c "curl -s \"https://get.sdkman.io\" | bash && source \"/root/.sdkman/bin/sdkman-init.sh\" && sdk install gradle"
+ENV PATH=/root/.sdkman/candidates/gradle/current/bin:$PATH
 
 WORKDIR /app
-COPY pom.xml .
-RUN mvn install -Dmaven.test.skip=true ; echo ""
+COPY build.gradle .
+COPY settings.gradle .
+RUN gradle build -x bootJar
 COPY src/ src/
-RUN mvn install -Dmaven.test.skip=true &&\
-	mv target/nogi-profile-web-0.0.1-SNAPSHOT.jar nogi-profile-web.jar
+RUN gradle build -x test &&\
+	cp build/libs/nogi-profile-web-*.jar nogi-profile-web.jar
 
 FROM openjdk:11
 
