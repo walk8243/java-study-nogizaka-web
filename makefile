@@ -1,7 +1,7 @@
 .PHONY: init build run reload logs
 
 define ECLIPSE_LOAD
-	@.\gradlew eclipse
+	@gradlew eclipse
 endef
 
 init:
@@ -14,6 +14,7 @@ run:
 	@docker exec nogi-profile.web sleep 1
 
 reload:
+	@gradlew cleanEclipse
 	$(call ECLIPSE_LOAD)
 
 logs:

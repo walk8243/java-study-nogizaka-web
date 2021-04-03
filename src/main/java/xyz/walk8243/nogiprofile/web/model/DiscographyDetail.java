@@ -2,24 +2,13 @@ package xyz.walk8243.nogiprofile.web.model;
 
 import java.util.List;
 
-public class DiscographyDetail extends Discography {
-	private List<SongOnDisc> songs;
+import lombok.Getter;
+import lombok.Setter;
 
-	public List<SongOnDisc> getSongs() {
-		return songs;
-	}
-	public void setSongs(List<SongOnDisc> songs) {
-		this.songs = songs;
-	}
+public class DiscographyDetail extends Discography {
+	@Getter @Setter List<SongOnDisc> songs;
 
 	static class SongOnDisc extends Song {
-		private Integer order;
-
-		public Integer getOrder() {
-			return order;
-		}
-		public void setOrder(Integer order) {
-			this.order = order;
-		}
+		@Getter @Setter Integer order;
 	}
 }
