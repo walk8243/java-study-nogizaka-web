@@ -1,24 +1,26 @@
 package xyz.walk8243.nogiprofile.web.service;
 
-import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import xyz.walk8243.nogiprofile.web.model.Discography;
 import xyz.walk8243.nogiprofile.web.model.DiscographyDetail;
+import xyz.walk8243.nogiprofile.web.repository.NogizakaApiRepository;
 
 @Service
 public class DiscService extends BaseService {
-	public final String BASE_PATH = "/disc";
+	@Autowired
+	NogizakaApiRepository nogizakaApiRepository;
 
 	public List<Discography> getAll() {
-		Discography[] discs = restTemplate.getForObject(getBaseUrl() + BASE_PATH + "/all", Discography[].class);
-		return Arrays.asList(discs);
+		List<Discography> discs = nogizakaApiRepository.getDiscographyAll();
+		return discs;
 	}
 
 	public DiscographyDetail get(Integer id) {
-		DiscographyDetail disc = restTemplate.getForObject(getBaseUrl() + BASE_PATH + "/songs/" + id.toString(), DiscographyDetail.class);
+		DiscographyDetail disc = nogizakaApiRepository.getDiscography(id);
 		return disc;
 	}
 }

@@ -1,13 +1,16 @@
 package xyz.walk8243.nogiprofile.web.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import xyz.walk8243.nogiprofile.web.AppProperties;
 
 @Service
 public class IndexService extends BaseService {
-	public final String BASE_PATH = "/";
+	@Autowired
+	AppProperties appProperties;
 
 	public String getResponse() {
-		// return restTemplate.getForObject(BASE_URL + BASE_PATH, String.class);
-		return appProperties.getName() + ", " + getBaseUrl();
+		return appProperties.getName() + ", " + appProperties.getBackend().getUrl();
 	}
 }

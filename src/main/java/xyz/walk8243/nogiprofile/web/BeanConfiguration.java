@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableConfigurationProperties(AppProperties.class)
 public class BeanConfiguration {
 	@Bean
-	public RestTemplate getRestTemplate() {
+	RestTemplate getRestTemplate() {
 		return new RestTemplate();
 	}
 }
