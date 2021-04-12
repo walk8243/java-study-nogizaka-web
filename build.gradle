@@ -9,16 +9,22 @@ group = 'xyz.walk8243'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+ext {
+	springVersion = '2.3.9.RELEASE'
+	lombokVersion = '1.18.20'
+}
+
 repositories {
 	mavenCentral()
 }
 
 dependencies {
-	compileOnly 'org.projectlombok:lombok'
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	annotationProcessor 'org.projectlombok:lombok'
+	compileOnly group: 'org.projectlombok', name: 'lombok', version: rootProject.ext.lombokVersion
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: rootProject.ext.springVersion
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: rootProject.ext.springVersion
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-cache', version: rootProject.ext.springVersion
+	testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: rootProject.ext.springVersion
+	annotationProcessor group: 'org.projectlombok', name: 'lombok', version: rootProject.ext.lombokVersion
 }
 
 test {
