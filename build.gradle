@@ -19,12 +19,12 @@ repositories {
 }
 
 dependencies {
-	compileOnly group: 'org.projectlombok', name: 'lombok', version: rootProject.ext.lombokVersion
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: rootProject.ext.springVersion
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: rootProject.ext.springVersion
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-cache', version: rootProject.ext.springVersion
-	testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: rootProject.ext.springVersion
-	annotationProcessor group: 'org.projectlombok', name: 'lombok', version: rootProject.ext.lombokVersion
+	compileOnly group: 'org.projectlombok', name: 'lombok', version: "$lombokVersion"
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: "$springVersion"
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "$springVersion"
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-cache', version: "$springVersion"
+	testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: "$springVersion"
+	annotationProcessor group: 'org.projectlombok', name: 'lombok', version: "$lombokVersion"
 }
 
 test {
