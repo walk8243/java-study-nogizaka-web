@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 
 import xyz.walk8243.nogiprofile.web.model.Song;
 import xyz.walk8243.nogiprofile.web.model.SongDetail;
-import xyz.walk8243.nogiprofile.web.repository.NogizakaApiRepository;
+import xyz.walk8243.nogiprofile.web.repository.NogizakaApiRepositoryCacheImpl;
 
 @Service
 public class SongService extends BaseService {
 	@Autowired
-	NogizakaApiRepository nogizakaApiRepository;
+	NogizakaApiRepositoryCacheImpl nogizakaApiRepository;
 
 	public List<Song> getAll() {
 		List<Song> songs = nogizakaApiRepository.getSongAll();

@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 
 import xyz.walk8243.nogiprofile.web.model.Discography;
 import xyz.walk8243.nogiprofile.web.model.DiscographyDetail;
-import xyz.walk8243.nogiprofile.web.repository.NogizakaApiRepository;
+import xyz.walk8243.nogiprofile.web.repository.NogizakaApiRepositoryCacheImpl;
 
 @Service
 public class DiscService extends BaseService {
 	@Autowired
-	NogizakaApiRepository nogizakaApiRepository;
+	NogizakaApiRepositoryCacheImpl nogizakaApiRepository;
 
 	public List<Discography> getAll() {
 		List<Discography> discs = nogizakaApiRepository.getDiscographyAll();
