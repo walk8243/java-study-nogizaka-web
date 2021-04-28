@@ -10,6 +10,7 @@ import lombok.Setter;
 @ConfigurationProperties(prefix = "app")
 public class AppProperties {
 	@Getter @Setter private String name = "nogiprofile-web";
+	@Getter @Setter private String env;
 	@Getter private final Backend backend = new Backend();
 
 	public static class Backend {

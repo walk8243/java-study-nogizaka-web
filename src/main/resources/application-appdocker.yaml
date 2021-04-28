@@ -1,0 +1,4 @@
+app:
+  env: docker
+  backend:
+    url: http://api:8080

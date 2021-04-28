@@ -11,6 +11,6 @@ public class IndexService extends BaseService {
 	AppProperties appProperties;
 
 	public String getResponse() {
-		return appProperties.getName() + ", " + appProperties.getBackend().getUrl();
+		return appProperties.getName() + ", " + appProperties.getEnv() + ", " + appProperties.getBackend().getUrl();
 	}
 }

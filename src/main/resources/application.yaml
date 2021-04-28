@@ -1,4 +1,20 @@
 app:
   name: java-study-nogizaka-web
+  env: none
   backend:
     url: http://localhost:46468
+
+spring:
+  profiles:
+    group:
+      dev:
+        - appdev
+      stg:
+        - appstg
+      prod:
+        - appprod
+      local:
+        - applocal
+      docker:
+        - appdocker
+      default: local
