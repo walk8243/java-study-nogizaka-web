@@ -12,6 +12,7 @@ FROM openjdk:11
 
 WORKDIR /app
 COPY --from=worker /build/nogi-profile-web.jar .
-COPY docker/ .
+
+ENV SPRING_PROFILES_ACTIVE=docker
 
 CMD [ "java", "-jar", "nogi-profile-web.jar" ]
